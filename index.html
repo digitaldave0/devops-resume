@@ -4,47 +4,77 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>David Hibbitts | DevOps & MLOps Lead</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <style>
+    * {
+      box-sizing: border-box;
+    }
     body {
-      font-family: Arial, sans-serif;
-      background-color: #f4f4f4;
-      color: #333;
+      font-family: 'Roboto', sans-serif;
+      background: linear-gradient(135deg, #f0f4f8, #d9e2ec);
+      color: #2c3e50;
       margin: 0;
       padding: 0;
+      animation: fadeIn 1s ease-in;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
     }
     .container {
-      max-width: 900px;
-      margin: auto;
-      padding: 20px;
+      max-width: 960px;
+      margin: 50px auto;
+      padding: 30px;
       background-color: white;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
     }
     h1, h2 {
-      color: #2c3e50;
+      color: #1a73e8;
+      margin-bottom: 10px;
     }
     .section {
-      margin-bottom: 30px;
+      margin-bottom: 40px;
     }
     ul {
       padding-left: 20px;
     }
     .contact {
-      font-size: 0.9em;
-      color: #555;
+      font-size: 0.95em;
+      margin-bottom: 20px;
     }
     .skills span {
       display: inline-block;
-      background-color: #eee;
-      padding: 5px 10px;
-      margin: 4px;
-      border-radius: 5px;
+      background-color: #e8f0fe;
+      color: #1a73e8;
+      padding: 6px 12px;
+      margin: 5px 5px 0 0;
+      border-radius: 15px;
+      font-weight: bold;
+      transition: transform 0.2s;
+    }
+    .skills span:hover {
+      transform: scale(1.1);
+    }
+    a {
+      color: #1a73e8;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    .footer {
+      text-align: center;
+      font-size: 0.8em;
+      margin-top: 50px;
+      color: #666;
     }
   </style>
 </head>
 <body>
   <div class="container">
     <h1>David Hibbitts</h1>
-    <p class="contact">Manchester, UK | REMOVED_EMAIL | REMOVED_PHONE | <a href="https://linkedin.com/in/davehibbitts">LinkedIn</a></p>
+    <p class="contact">Manchester, UK | <a href="mailto:REMOVED_EMAIL">REMOVED_EMAIL</a> | REMOVED_PHONE | <a href="https://linkedin.com/in/davehibbitts" target="_blank">LinkedIn</a></p>
 
     <div class="section">
       <h2>Professional Summary</h2>
@@ -84,6 +114,10 @@
         <li>Lean Manager Level 3 – Cardiff University</li>
       </ul>
     </div>
+  </div>
+
+  <div class="footer">
+    &copy; 2025 David Hibbitts | Resume powered by GitHub Pages
   </div>
 </body>
 </html>
