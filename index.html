@@ -21,18 +21,28 @@
       from { opacity: 0; }
       to { opacity: 1; }
     }
+    .banner {
+      background: linear-gradient(90deg, #1a73e8, #4285f4);
+      color: white;
+      padding: 30px 20px;
+      text-align: center;
+    }
+    .banner h1 {
+      font-family: 'Oswald', sans-serif;
+      font-size: 2.8rem;
+      margin: 0;
+    }
+    .banner p {
+      margin: 10px 0 0;
+      font-size: 1rem;
+    }
     .container {
       max-width: 960px;
-      margin: 50px auto;
+      margin: 30px auto;
       padding: 30px;
       background-color: white;
       border-radius: 10px;
       box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
-    }
-    h1 {
-      font-family: 'Oswald', sans-serif;
-      font-size: 2.5rem;
-      color: #1a73e8;
     }
     h2 {
       font-family: 'Oswald', sans-serif;
@@ -55,6 +65,7 @@
     .contact {
       font-size: 0.95em;
       margin-bottom: 20px;
+      text-align: center;
     }
     .skills span {
       display: inline-block;
@@ -85,8 +96,12 @@
   </style>
 </head>
 <body>
-  <div class="container">
+  <div class="banner">
     <h1>David Hibbitts</h1>
+    <p>DevOps Lead | AWS Specialist | MLOps Explorer</p>
+  </div>
+
+  <div class="container">
     <p class="contact">Manchester, UK | <a href="mailto:REMOVED_EMAIL">REMOVED_EMAIL</a> | <a href="https://linkedin.com/in/davehibbitts" target="_blank">LinkedIn</a></p>
 
     <div class="section">
