@@ -24,7 +24,7 @@
     .banner {
       background-color: #121212;
       color: #9be4d4;
-      padding: 50px 20px;
+      padding: 50px 20px 20px;
       text-align: center;
       border-bottom: 3px solid #00ffcc;
     }
@@ -37,6 +37,11 @@
       margin-top: 10px;
       font-size: 1.2rem;
       color: #8ce3cf;
+    }
+    .contact {
+      margin-top: 10px;
+      font-size: 0.95rem;
+      color: #ccc;
     }
     .container {
       max-width: 960px;
@@ -62,12 +67,6 @@
     }
     ul {
       padding-left: 20px;
-    }
-    .contact {
-      font-size: 0.95em;
-      margin-bottom: 20px;
-      text-align: center;
-      color: #ccc;
     }
     .skills span {
       display: inline-block;
@@ -101,29 +100,17 @@
   <div class="banner">
     <h1>David Hibbitts</h1>
     <p>DevOps Lead | AWS Specialist</p>
+    <p class="contact">
+      Manchester, UK | <a href="mailto:REMOVED_EMAIL">REMOVED_EMAIL</a> | 
+      <a href="https://linkedin.com/in/davehibbitts" target="_blank">LinkedIn</a>
+    </p>
   </div>
 
   <div class="container">
-    <p class="contact">Manchester, UK | <a href="mailto:REMOVED_EMAIL">REMOVED_EMAIL</a> | <a href="https://linkedin.com/in/davehibbitts" target="_blank">LinkedIn</a></p>
-
     <div class="section">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dave Hibbitts – DevOps Engineer</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <header>
-      <h1>Dave Hibbitts</h1>
-      <p>Lead DevOps Engineer | Cloud Enthusiast | Automation Advocate</p>
-    </header>
-
-    <section class="about">
       <h2>About Me</h2>
       <p>
         I’m an enthusiastic technologist with deep roots in computing — from repairing IBM machines as a bench engineer to leading modern DevOps transformations. Over the years, I’ve evolved through diverse technical roles in electronics, engineering, systems design, and cloud architecture. I thrive on delivering high-impact solutions that align with business goals while embracing a lifelong learning mindset. I consistently track emerging technologies to stay ahead of the curve and bring innovation to everything I build.
-        I am an enthusiastic technologist with a strong background in the computer industry. Since beginning my career as a service bench engineer for IBM, I have progressed through various roles in electronics, engineering, and computer system design and implementation. Currently, I am working as a Lead DevOps Engineer, where I deliver solutions that support the organization's business objectives. I'm a lifelong learner with a growth mindset, always exploring new technologies and industry trends.
       </p>
     </div>
 
@@ -137,46 +124,27 @@
     <div class="section">
       <h2>Skills</h2>
       <div class="skills">
-        <span>AWS</span><span>Terraform</span><span>Fargate</span><span>Lambda</span><span>CI/CD</span><span>GitLab</span><span>Python</span><span>PowerShell</span><span>Kubernetes</span><span>MLOps</span><span>FastAPI</span><span>Datadog</span>
+        <span>AWS</span><span>Terraform</span><span>Fargate</span><span>Lambda</span>
+        <span>CI/CD</span><span>GitLab</span><span>Python</span><span>PowerShell</span>
+        <span>Kubernetes</span><span>MLOps</span><span>FastAPI</span><span>Datadog</span>
       </div>
     </div>
-    </section>
 
     <div class="section">
-    <section class="experience">
       <h2>Experience</h2>
       <h3>Lead DevOps Engineer – Trust Alliance Group (Dec 2023 – Present)</h3>
-      <h3>Lead DevOps Engineer – Trust Alliance Group</h3>
-      <p><strong>Dec 2023 – Present | Warrington, UK (Hybrid)</strong></p>
       <ul>
         <li>Reduced AWS costs by 30% with reusable Terraform CI/CD Orbs.</li>
         <li>Implemented disaster recovery using warm standby architecture.</li>
         <li>Mentored engineers and established DevOps best practices.</li>
-        <li>Built reusable Terraform-based CI/CD pipelines with CircleCI Orbs, reducing costs by 30%.</li>
-        <li>Implemented disaster recovery using warm standby architecture for high availability.</li>
-        <li>Standardized AWS deployments across dev, staging, and production environments.</li>
-        <li>Mentored cross-functional teams and led process improvements.</li>
       </ul>
-    </section>
 
       <h3>DevOps Engineer – Barclays (2008 – 2023)</h3>
       <ul>
         <li>Built CI/CD orchestration tools, secrets management with Vault, and Terraform infra modules.</li>
         <li>Supported migration to AWS cloud and serverless-first delivery patterns.</li>
-    <section class="skills">
-      <h2>Skills</h2>
-      <ul class="features">
-        <li>AWS & Cloud Architecture</li>
-        <li>Terraform & Infrastructure as Code</li>
-        <li>CI/CD Pipelines (CircleCI, GitHub Actions)</li>
-        <li>Docker & Containerization</li>
-        <li>Kubernetes & ECS Fargate</li>
-        <li>Monitoring (Datadog, New Relic)</li>
-        <li>Serverless (Lambda, DynamoDB)</li>
-        <li>Security & Cost Optimization</li>
       </ul>
     </div>
-    </section>
 
     <div class="section">
       <h2>Certifications</h2>
@@ -184,14 +152,18 @@
         <li>AWS Certified Solutions Architect</li>
         <li>Azure Fundamentals</li>
         <li>Lean Manager Level 3 – Cardiff University</li>
-    <section class="blog">
-      <h2>Blog</h2>
-      <ul class="features">
-        <li><a href="https://digitaldave0.github.io/dev-blog" target="_blank">Visit My DevOps/MLOps Blog</a></li>
       </ul>
     </div>
+
+    <div class="section">
+      <h2>Blog</h2>
+      <p>
+        Explore my DevOps & MLOps insights, tooling reviews, and walkthroughs:
+        <br>
+        <a href="https://digitaldave0.github.io/dev-blog" target="_blank">Visit My Dev Blog</a>
+      </p>
+    </div>
   </div>
-    </section>
 
   <div class="footer">
     &copy; 2025 David Hibbitts | Resume powered by GitHub Pages
@@ -214,9 +186,4 @@
     });
   </script>
 </body>
-    <footer>
-      <p>Contact: <a href="mailto:REMOVED_EMAIL">REMOVED_EMAIL</a></p>
-      <p>© 2025 Dave Hibbitts</p>Add commentMore actions
-    </footer>
-  </body>
 </html>
