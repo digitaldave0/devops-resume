@@ -9,17 +9,21 @@
     body {
       margin: 0;
       font-family: 'Inter', sans-serif;
-      background-color: #0f0f0f;
       color: #ffffff;
+      background: url('images/digital-weave-bg.png') center center / cover no-repeat fixed;
       display: flex;
       flex-direction: column;
       align-items: center;
       padding: 2rem;
+      min-height: 100vh;
     }
 
     header {
       text-align: center;
       max-width: 800px;
+      background-color: rgba(0, 0, 0, 0.7);
+      padding: 2rem;
+      border-radius: 12px;
     }
 
     .avatar-container {
@@ -40,6 +44,10 @@
     h1 {
       font-size: 2.5rem;
       margin-bottom: 0.5rem;
+    }
+
+    h1 span {
+      color: #00bfff;
     }
 
     h2 {
@@ -74,17 +82,9 @@
       margin-top: 4rem;
       font-size: 0.9rem;
       color: #aaa;
-    }
-
-    .blue {
-      color: #ffffff;
-    }
-    .blue:hover,
-    .blue:focus,
-    .blue:active,
-    .blue:visited,
-    .blue:link {
-      color: #00bfff;
+      background-color: rgba(0, 0, 0, 0.6);
+      padding: 1rem 2rem;
+      border-radius: 8px;
     }
   </style>
 </head>
@@ -94,7 +94,7 @@
   </div>
 
   <header>
-    <h1>I'm <span class="blue">David Hibbitts</span></h1>
+    <h1>I'm <span>David Hibbitts</span></h1>
     <h2>Lead DevOps Engineer | Cloud Automation | MLOps Explorer</h2>
 
     <div class="buttons">
