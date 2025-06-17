@@ -198,25 +198,25 @@
 
     .visitor-stats {
       margin-top: 0.5rem;
-      background: rgba(0, 100, 255, 0.1);
-      padding: 0.8rem 1.5rem;
+      padding: 0.3rem;
       border-radius: 8px;
       backdrop-filter: blur(4px);
-      border: 1px solid rgba(0, 191, 255, 0.2);
     }
 
     .visit-count {
-      font-size: 1.1rem;
-      font-weight: 500;
-      color: var(--primary-color);
-      text-shadow: 0 2px 8px rgba(0, 191, 255, 0.3);
-      letter-spacing: 0.5px;
+      display: flex;
+      justify-content: center;
     }
 
-    #visits {
-      font-weight: 700;
-      color: #ffffff;
-      margin-right: 4px;
+    .visit-count img {
+      border-radius: 4px;
+      box-shadow: 0 2px 8px rgba(0, 191, 255, 0.2);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .visit-count img:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0, 191, 255, 0.3);
     }
 
     footer::before {
@@ -329,16 +329,11 @@
       </div>
       <div class="visitor-stats">
         <div class="visit-count">
-          <span id="visits">...</span> visits
+          <a href="https://hits.seeyoufarm.com">
+            <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fdigitaldave0.github.io&count_bg=%230077FF&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=visits&edge_flat=false"/>
+          </a>
         </div>
       </div>
-      <script>
-        fetch('https://api.countapi.xyz/hit/davehibbitts.com/visits')
-          .then(response => response.json())
-          .then(data => {
-            document.getElementById('visits').textContent = data.value.toLocaleString();
-          });
-      </script>
     </div>
   </footer>
 </body>
