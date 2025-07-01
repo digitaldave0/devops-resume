@@ -118,11 +118,47 @@
     h2 {
       font-size: 1.6rem;
       font-weight: 500;
-      margin-bottom: 2rem;
+      margin-bottom: 1rem;
       color: #ffffff;
       animation: slideIn 1s ease-out;
       text-shadow: 0 2px 8px rgba(255, 255, 255, 0.2);
       letter-spacing: 0.5px;
+    }
+
+    .availability-banner {
+      background: rgba(0, 255, 0, 0.15);
+      border: 2px solid rgba(0, 255, 0, 0.3);
+      border-radius: 20px;
+      padding: 0.8rem 1.5rem;
+      margin-bottom: 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.8rem;
+      font-weight: 500;
+      animation: pulse 2s infinite ease-in-out;
+      text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+    }
+
+    .availability-dot {
+      width: 10px;
+      height: 10px;
+      background-color: #00ff00;
+      border-radius: 50%;
+      display: inline-block;
+      animation: blink 1.5s infinite;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.02); }
+      100% { transform: scale(1); }
+    }
+
+    @keyframes blink {
+      0% { opacity: 1; }
+      50% { opacity: 0.4; }
+      100% { opacity: 1; }
     }
 
     .buttons {
@@ -327,6 +363,13 @@
         word-wrap: break-word;
       }
 
+      .availability-banner {
+        font-size: 0.9rem;
+        padding: 0.6rem 1rem;
+        margin: 0.5rem 0 1.5rem 0;
+        text-align: center;
+      }
+
       .avatar {
         width: 120px;
         height: 120px;
@@ -381,6 +424,10 @@
   <header>
     <h1>I'm Dave Hibbitts</h1>
     <h2>DevOps Engineer | Cloud Automation | MLOps | AI </h2>
+    <div class="availability-banner">
+      <span class="availability-dot"></span>
+      Available for new contracts from August 2025
+    </div>
 
     <div class="buttons">
       <a href="mailto:REMOVED_EMAIL">Email Me</a>
@@ -392,7 +439,7 @@
   <footer>
     <div class="footer-content">
       <div class="copyright">
-        &copy; 2025 Dave Hibbitts | Built with GitHub Pages
+        &copy; 2025 Dave Hibbitts | Senior DevOps Consultant
       </div>
       <div class="visitor-stats">
         <p style="margin: 0.5rem 0; color: var(--primary-color);">Page Visits</p>
