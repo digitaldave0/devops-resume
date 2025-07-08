@@ -9,10 +9,12 @@
   <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
   <style>
     :root {
-      --primary-color: #00bfff;
-      --secondary-color: #0066ff;
-      --text-color: #ffffff;
-      --bg-overlay: rgba(0, 20, 40, 0.75);
+      --primary-color: #4fb8e8;
+      --secondary-color: #2c89b5;
+      --text-color: #f0f8ff;
+      --bg-overlay: rgba(20, 30, 40, 0.65);
+      --accent-color: #7dd3fc;
+      --hover-color: #38bdf8;
     }
 
     body {
@@ -21,10 +23,10 @@
       color: var(--text-color);
       background: 
         linear-gradient(
-          rgba(0, 191, 255, 0.4),
-          rgba(0, 102, 255, 0.5)
+          rgba(79, 184, 232, 0.3),
+          rgba(44, 137, 181, 0.4)
         ),
-        url('images/calm-sea.jpg');
+        url('images/image.png');
       background-size: cover;
       background-position: center;
       background-attachment: fixed;
@@ -126,8 +128,8 @@
     }
 
     .availability-banner {
-      background: rgba(0, 255, 0, 0.15);
-      border: 2px solid rgba(0, 255, 0, 0.3);
+      background: rgba(125, 211, 252, 0.15);
+      border: 2px solid rgba(125, 211, 252, 0.3);
       border-radius: 20px;
       padding: 0.8rem 1.5rem;
       margin-bottom: 2rem;
@@ -138,15 +140,14 @@
       font-weight: 500;
       animation: pulse 2s infinite ease-in-out;
       text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+      backdrop-filter: blur(5px);
     }
 
-    .availability-dot {
-      width: 10px;
-      height: 10px;
-      background-color: #00ff00;
-      border-radius: 50%;
+    .rocket-icon {
       display: inline-block;
-      animation: blink 1.5s infinite;
+      font-size: 1.2rem;
+      animation: rocketFloat 2s ease-in-out infinite;
+      margin-right: 0.2rem;
     }
 
     @keyframes pulse {
@@ -155,10 +156,10 @@
       100% { transform: scale(1); }
     }
 
-    @keyframes blink {
-      0% { opacity: 1; }
-      50% { opacity: 0.4; }
-      100% { opacity: 1; }
+    @keyframes rocketFloat {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-4px); }
+      100% { transform: translateY(0); }
     }
 
     .buttons {
@@ -171,8 +172,8 @@
 
     .buttons a {
       color: var(--text-color);
-      background: rgba(30, 30, 30, 0.8);
-      border: 2px solid var(--primary-color);
+      background: rgba(44, 137, 181, 0.25);
+      border: 2px solid var(--accent-color);
       border-radius: 30px;
       padding: 0.9rem 1.8rem;
       text-decoration: none;
@@ -181,7 +182,8 @@
       overflow: hidden;
       font-weight: 500;
       letter-spacing: 0.5px;
-      text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+      text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+      backdrop-filter: blur(5px);
     }
 
     .buttons a::before {
@@ -201,10 +203,11 @@
     }
 
     .buttons a:hover {
-      background: var(--primary-color);
-      color: #000;
+      background: var(--hover-color);
+      color: #fff;
       transform: translateY(-2px);
-      box-shadow: 0 4px 15px rgba(0, 191, 255, 0.4);
+      box-shadow: 0 4px 15px rgba(56, 189, 248, 0.4);
+      border-color: var(--hover-color);
     }
 
     .buttons a:hover::before {
@@ -277,6 +280,180 @@
       animation: borderGradient 8s linear infinite;
     }
 
+    /* Modal Styles */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.7);
+      backdrop-filter: blur(5px);
+      z-index: 1001;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .modal.show {
+      display: flex;
+      opacity: 1;
+    }
+
+    .modal-content {
+      background: var(--bg-overlay);
+      margin: auto;
+      padding: 2rem;
+      border-radius: 16px;
+      width: 90%;
+      max-width: 800px;
+      position: relative;
+      backdrop-filter: blur(16px);
+      border: 4px solid transparent;
+      background-clip: padding-box;
+      transform: translateY(-20px);
+      transition: transform 0.3s ease;
+      animation: modalSlideIn 0.3s ease forwards;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    }
+
+    .modal-content::before {
+      content: '';
+      position: absolute;
+      top: -4px;
+      right: -4px;
+      bottom: -4px;
+      left: -4px;
+      z-index: -1;
+      border-radius: 16px;
+      background: linear-gradient(
+        45deg,
+        var(--primary-color),
+        var(--secondary-color),
+        #9933ff,
+        var(--primary-color)
+      );
+      background-size: 300% 300%;
+      animation: borderGradient 8s linear infinite;
+    }
+
+    .modal.show .modal-content {
+      transform: translateY(0);
+    }
+
+    .modal-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 2rem;
+      padding-bottom: 1rem;
+      border-bottom: 2px solid rgba(125, 211, 252, 0.2);
+    }
+
+    .modal-title {
+      font-size: 2rem;
+      color: var(--text-color);
+      margin: 0;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      text-shadow: 0 2px 10px rgba(0, 191, 255, 0.3);
+    }
+
+    .close-button {
+      background: rgba(125, 211, 252, 0.1);
+      border: 2px solid var(--accent-color);
+      color: var(--text-color);
+      font-size: 1.5rem;
+      cursor: pointer;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+      backdrop-filter: blur(5px);
+    }
+
+    .close-button:hover {
+      transform: scale(1.1) rotate(90deg);
+      background: var(--hover-color);
+      border-color: var(--hover-color);
+    }
+
+    .tech-stack {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 1.2rem;
+      margin-top: 1.5rem;
+    }
+
+    .tech-item {
+      background: rgba(125, 211, 252, 0.1);
+      padding: 1.2rem;
+      border-radius: 12px;
+      border: 2px solid transparent;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      backdrop-filter: blur(5px);
+      transition: all 0.3s ease;
+      background-clip: padding-box;
+      overflow: hidden;
+    }
+
+    .tech-item::before {
+      content: '';
+      position: absolute;
+      top: -2px;
+      right: -2px;
+      bottom: -2px;
+      left: -2px;
+      z-index: -1;
+      border-radius: 12px;
+      background: linear-gradient(
+        45deg,
+        var(--primary-color),
+        var(--secondary-color),
+        #9933ff,
+        var(--primary-color)
+      );
+      background-size: 300% 300%;
+      opacity: 0.5;
+      transition: all 0.3s ease;
+      animation: borderGradient 8s linear infinite;
+    }
+
+    .tech-item:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    }
+
+    .tech-item:hover::before {
+      opacity: 1;
+    }
+
+    .tech-icon {
+      font-size: 2rem;
+      margin-bottom: 0.8rem;
+      filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+    }
+
+    .tech-name {
+      font-weight: 600;
+      font-size: 1.1rem;
+      letter-spacing: 0.5px;
+      margin-bottom: 0.4rem;
+      text-shadow: 0 2px 10px rgba(0, 191, 255, 0.3);
+    }
+
+    .tech-detail {
+      font-size: 0.9rem;
+      opacity: 0.9;
+      color: var(--accent-color);
+      text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+    }
+
     @keyframes fadeIn {
       from { opacity: 0; }
       to { opacity: 1; }
@@ -308,6 +485,17 @@
       0% { background-position: 0% 50%; }
       50% { background-position: 100% 50%; }
       100% { background-position: 0% 50%; }
+    }
+
+    @keyframes modalSlideIn {
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     @media screen and (max-width: 1024px) {
@@ -425,15 +613,73 @@
     <h1>Dave Hibbitts</h1>
     <h2>DevOps Engineer | Cloud Automation | MLOps | AI </h2>
     <div class="availability-banner">
-      <span class="availability-dot"></span>
+      <span class="rocket-icon">🚀</span>
       Available for new contracts from August 2025
     </div>
 
     <div class="buttons">
       <a href="https://www.linkedin.com/in/davehibbitts" target="_blank">LinkedIn</a>
       <a href="https://blog.digitaldevops.xyz/" target="_blank">Blog</a>
+      <a href="#" onclick="toggleModal(event)">Stack</a>
     </div>
   </header>
+
+  <!-- Tech Stack Modal -->
+  <div id="stackModal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title">Tech Stack</h3>
+        <button class="close-button" onclick="toggleModal(event)">×</button>
+      </div>
+      <div class="tech-stack">
+        <div class="tech-item">
+          <span class="tech-icon">☁️</span>
+          <span class="tech-name">AWS</span>
+          <span class="tech-detail">EC2, S3, Lambda, RDS</span>
+        </div>
+        <div class="tech-item">
+          <span class="tech-icon">⎈</span>
+          <span class="tech-name">Kubernetes</span>
+          <span class="tech-detail">Orchestration & Deployment</span>
+        </div>
+        <div class="tech-item">
+          <span class="tech-icon">🐳</span>
+          <span class="tech-name">ECS</span>
+          <span class="tech-detail">Container Management</span>
+        </div>
+        <div class="tech-item">
+          <span class="tech-icon">🐍</span>
+          <span class="tech-name">Python</span>
+          <span class="tech-detail">2 Years Experience</span>
+        </div>
+        <div class="tech-item">
+          <span class="tech-icon">💻</span>
+          <span class="tech-name">Full Stack</span>
+          <span class="tech-detail">Front & Backend Dev</span>
+        </div>
+        <div class="tech-item">
+          <span class="tech-icon">🏗️</span>
+          <span class="tech-name">Terraform</span>
+          <span class="tech-detail">Infrastructure as Code</span>
+        </div>
+        <div class="tech-item">
+          <span class="tech-icon">📦</span>
+          <span class="tech-name">CloudFormation</span>
+          <span class="tech-detail">AWS Infrastructure</span>
+        </div>
+        <div class="tech-item">
+          <span class="tech-icon">⎈</span>
+          <span class="tech-name">EKS</span>
+          <span class="tech-detail">Managed Kubernetes</span>
+        </div>
+        <div class="tech-item">
+          <span class="tech-icon">☁️</span>
+          <span class="tech-name">Azure</span>
+          <span class="tech-detail">Cloud Services</span>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <footer>
     <div class="footer-content">
@@ -451,5 +697,34 @@
       </div>
     </div>
   </footer>
+
+  
+  <script>
+    function toggleModal(event) {
+      event.preventDefault();
+      const modal = document.getElementById('stackModal');
+      modal.classList.toggle('show');
+      
+      if (modal.classList.contains('show')) {
+        document.body.style.overflow = 'hidden';
+      } else {
+        document.body.style.overflow = '';
+      }
+    }
+
+    // Close modal when clicking outside
+    document.getElementById('stackModal').addEventListener('click', function(event) {
+      if (event.target === this) {
+        toggleModal(event);
+      }
+    });
+
+    // Close modal with Escape key
+    document.addEventListener('keydown', function(event) {
+      if (event.key === 'Escape' && document.getElementById('stackModal').classList.contains('show')) {
+        toggleModal(event);
+      }
+    });
+  </script>
 </body>
 </html>
