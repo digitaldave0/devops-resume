@@ -296,6 +296,8 @@
       z-index: 1001;
       opacity: 0;
       transition: opacity 0.3s ease;
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
     }
 
     .modal.show {
@@ -531,6 +533,21 @@
 
     /* Mobile devices */
     @media screen and (max-width: 480px) {
+      .modal-content {
+        width: 100%;
+        margin: 1rem;
+        padding: 1rem;
+        max-height: calc(100vh - 2rem);
+      }
+
+      .tech-stack {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+
+      .modal-title {
+        font-size: 1.5rem;
+      }
       body {
         padding: 1rem;
         min-height: calc(100vh - 2rem);
@@ -609,7 +626,7 @@
 </head>
 <body>
   <div class="avatar-container">
-    <img src="./images/avatar.jpeg" alt="David Hibbitts" class="avatar" />
+    <img src="./images/avatar.jpg" alt="David Hibbitts" class="avatar" />
   </div>
 
   <header>
@@ -708,10 +725,13 @@
       const modal = document.getElementById('stackModal');
       modal.classList.toggle('show');
       
-      if (modal.classList.contains('show')) {
-        document.body.style.overflow = 'hidden';
-      } else {
-        document.body.style.overflow = '';
+      // Only disable body scroll on desktop
+      if (!window.matchMedia('(max-width: 768px)').matches) {
+        if (modal.classList.contains('show')) {
+          document.body.style.overflow = 'hidden';
+        } else {
+          document.body.style.overflow = '';
+        }
       }
     }
 
