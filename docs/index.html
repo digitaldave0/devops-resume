@@ -538,6 +538,9 @@
         max-height: 90vh;
         overflow-y: auto;
         -webkit-overflow-scrolling: touch;
+        background: var(--bg-overlay);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
       }
 
       .tech-stack {
@@ -554,11 +557,21 @@
         max-width: 280px;
         margin: 0 auto;
         box-sizing: border-box;
+        background: rgba(125, 211, 252, 0.1);
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px);
+        border: 2px solid rgba(125, 211, 252, 0.2);
       }
 
       .modal-title {
         font-size: 1.5rem;
+        color: var(--text-color);
       }
+
+      .tech-name {
+        color: var(--text-color);
+      }
+
       body {
         padding: 1rem;
         min-height: calc(100vh - 2rem);
