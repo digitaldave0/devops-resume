@@ -537,15 +537,22 @@
     /* Mobile devices */
     @media screen and (max-width: 480px) {
       .modal-content {
-        width: 100%;
+        width: calc(100% - 2rem);
         margin: 1rem;
         padding: 1rem;
         max-height: calc(100vh - 2rem);
+        overflow-y: auto;
       }
 
       .tech-stack {
         grid-template-columns: 1fr;
         gap: 1rem;
+        width: 100%;
+      }
+
+      .tech-item {
+        width: 100%;
+        box-sizing: border-box;
       }
 
       .modal-title {
@@ -675,11 +682,7 @@
           <span class="tech-name">Python</span>
           <span class="tech-detail">2 Years Experience</span>
         </div>
-        <div class="tech-item">
-          <span class="tech-icon">💻</span>
-          <span class="tech-name">Full Stack</span>
-          <span class="tech-detail">Front & Backend Dev</span>
-        </div>
+
         <div class="tech-item">
           <span class="tech-icon">🏗️</span>
           <span class="tech-name">Terraform</span>
